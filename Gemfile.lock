@@ -36,11 +36,27 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    after_commit_action (1.0.1)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    annotate (2.7.0)
+      activerecord (>= 3.2, < 6.0)
+      rake (~> 10.4)
     arel (6.0.3)
+    autoprefixer-rails (6.3.5)
+      execjs
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bootstrap-sass (3.3.6)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.2)
-    byebug (8.2.1)
+    cocoon (1.2.9)
+    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -49,20 +65,27 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.0)
+    counter_culture (0.1.34)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      after_commit_action (~> 1.0.0)
+    daemons (1.2.3)
     debug_inspector (0.0.2)
     erubis (2.7.0)
+    eventmachine (1.2.0.1)
     execjs (2.6.0)
+    faraday (0.9.2)
+      multipart-post (>= 1.2, < 3)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    hashie (3.4.3)
     i18n (0.7.0)
-    jbuilder (2.4.0)
-      activesupport (>= 3.0.0, < 5.1)
-      multi_json (~> 1.2)
     jquery-rails (4.1.0)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
     json (1.8.3)
+    jwt (1.5.1)
     libv8 (3.16.14.13)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -72,9 +95,29 @@ GEM
     mini_portile2 (2.0.0)
     minitest (5.8.3)
     multi_json (1.11.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
     nokogiri (1.6.7.1)
       mini_portile2 (~> 2.0.0.rc2)
+    oauth2 (1.1.0)
+      faraday (>= 0.8, < 0.10)
+      jwt (~> 1.0, < 1.5.2)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    omniauth (1.3.1)
+      hashie (>= 1.2, < 4)
+      rack (>= 1.0, < 3)
+    omniauth-facebook (3.0.0)
+      omniauth-oauth2 (~> 1.2)
+    omniauth-oauth2 (1.4.0)
+      oauth2 (~> 1.0)
+      omniauth (~> 1.2)
     pg (0.18.4)
+    pg_search (1.0.5)
+      activerecord (>= 3.1)
+      activesupport (>= 3.1)
+      arel
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -97,26 +140,26 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.2)
       loofah (~> 2.0)
+    rails_12factor (0.0.3)
+      rails_serve_static_assets
+      rails_stdout_logging
+    rails_serve_static_assets (0.0.5)
+    rails_stdout_logging (0.0.5)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.5.0)
-    rdoc (4.2.1)
-      json (~> 1.4)
+    redcarpet (3.3.4)
     ref (2.0.0)
-    sass (3.4.21)
+    sass (3.4.22)
     sass-rails (5.0.4)
       railties (>= 4.0.0, < 5.0)
       sass (~> 3.1)
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
-    sdoc (0.4.1)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
-    spring (1.6.2)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -124,9 +167,14 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    sqlite3 (1.3.11)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
+    thin (1.6.4)
+      daemons (~> 1.0, >= 1.0.9)
+      eventmachine (~> 1.0, >= 1.0.4)
+      rack (~> 1.0)
     thor (0.19.1)
     thread_safe (0.3.5)
     tilt (2.0.2)
@@ -137,26 +185,33 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    web-console (2.2.1)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
+    will_paginate (3.1.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
-  coffee-rails (~> 4.1.0)
-  jbuilder (~> 2.0)
+  annotate
+  better_errors
+  binding_of_caller
+  bootstrap-sass
+  cocoon
+  coderay
+  coffee-rails (~> 4.1.1)
+  counter_culture (~> 0.1.23)
+  execjs
   jquery-rails
+  omniauth-facebook
   pg
+  pg_search
   rails (= 4.2.0)
-  sass-rails (~> 5.0)
-  sdoc (~> 0.4.0)
-  spring
+  rails_12factor
+  redcarpet
+  sass-rails
+  sqlite3
   therubyracer
+  thin
   turbolinks
+  tzinfo-data
   uglifier (>= 1.3.0)
-  web-console (~> 2.0)
+  will_paginate

@@ -1,0 +1,20 @@
+<%= form_for @article do |f| %>
+  <%= render 'shared/errors', object: @article %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_area :title, rows: 3, required: true, class: 'form-control' %>
+  </div>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">Options</div>
+    <div class="panel-body">
+      <%= f.text_area :text, rows: 6, required: true, class: 'form-control' %>
+    
+
+    
+    </div>
+  </div>
+
+  <%= f.submit 'Create', class: 'btn btn-primary btn-lg' %>
+<% end %>
