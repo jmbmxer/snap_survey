@@ -10,10 +10,11 @@
 <div id="articles">
 <% @articles.each do |article| %>
   <h2>
-    <%= link_to article.title, article %>
+    <%= highlight((link_to article.title, article), params[:query]) %>
   </h2>
   <div class="info">
-  <%= markdown(article.text) %>
+    <%= highlight(excerpt(article.text, params[:query], radius: 20), params[:query]) %>
+
 </div>
 <div class="info">
   on <%= article.created_at.strftime('%b %d, %Y') %>
