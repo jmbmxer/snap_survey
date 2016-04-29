@@ -36,6 +36,8 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    acts_as_taggable_on (3.0.0.rc2)
+      rails (>= 3, < 5)
     after_commit_action (1.0.1)
       activerecord (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -191,6 +193,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_taggable_on
   annotate
   better_errors
   binding_of_caller

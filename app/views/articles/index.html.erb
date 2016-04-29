@@ -11,6 +11,7 @@
 <% @articles.each do |article| %>
   <h2>
     <%= highlight((link_to article.title, article), params[:query]) %>
+    <div><h2><%= article.tag_list %></h2></div>
   </h2>
   <div class="info">
     <%= highlight(excerpt(article.text, params[:query], radius: 20), params[:query]) %>
