@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 # Use postgresql as the database for Active Record
 gem 'thin'
 gem 'pg_search'
-gem 'acts_as_taggable_on'
+gem 'acts-as-taggable-on', '~> 3.4'
 
 #markdown goodness
 gem 'redcarpet'

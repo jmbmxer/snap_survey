@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-  	@articles = Article.text_search(params[:query]).page(params[:page]).per_page(3)
+  	@articles = Article.text_search(params[:query]).page(params[:page]).per_page(6)
   end
 
   def new
@@ -37,7 +37,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-  	@article = Article.new(article_params)
+    #params[:article][:tag_list] = params[:article][:tag_list].join(',')  	
+    @article = Article.new(article_params)
   	if @article.save
   		flash[:success] = "Article was created!"
   		redirect_to articles_path
@@ -49,7 +50,7 @@ end
 private
 
 	def article_params
-		params.require(:article).permit(:title, :text, :tag_list)
+		params.require(:article).permit(:title, :text, :url)
 	end
 end
 

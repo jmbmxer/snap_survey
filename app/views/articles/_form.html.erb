@@ -3,14 +3,22 @@
 
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_area :title, rows: 3, required: true, class: 'form-control' %>
+    <%= f.text_area :title, rows: 1, required: true, class: 'form-control' %>
+    <%= f.label :url %>
+    <%= f.text_area :url, rows: 1, required: true, class: 'form-control' %>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">Options</div>
     <div class="panel-body">
       <%= f.text_area :text, rows: 6, required: true, class: 'form-control' %>
-      <%= f.text_field :tag_list %>
+      <%= f.label :tag_list %>
+      <%= f.check_box :tag_list, { :multiple => true }, 'web', nil %>
+      <%= f.check_box :tag_list, { :multiple => true }, 'politics', nil %>
+      <%= f.check_box :tag_list, { :multiple => true }, 'science', nil %>
+      <%= f.check_box :tag_list, { :multiple => true }, 'social', nil %>
+      <%= f.check_box :tag_list, { :multiple => true }, 'sports', nil %>
+
     
 
     
